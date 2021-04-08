@@ -1,9 +1,9 @@
 class Createsages < ActiveRecord::Migration[5.2]
   def change
-    create_table :Sage do |t|
-    t.string :thought
-    t.string :explenation
+    create_table :Sages do |t|
+    t.string :thoughts
     t.string :analysis
+    t.string :explenation
     end
   end
 end

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_08_184613) do
+ActiveRecord::Schema.define(version: 2021_04_08_195539) do
 
-  create_table "Sage", force: :cascade do |t|
-    t.string "thought"
-    t.string "explenation"
+  create_table "Sages", force: :cascade do |t|
+    t.string "thoughts"
     t.string "analysis"
+    t.string "explenation"
   end
 
   create_table "users", force: :cascade do |t|
