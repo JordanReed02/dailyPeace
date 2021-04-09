@@ -6,12 +6,12 @@ class UserController < ApplicationController
   end
 
 post "/signup" do
-  user = User.new(email: params[:email], username: params[:username], password_digest: params[:password])
-
+  user = User.new(email: params[:email], username: params[:username], password: params[:password])
   if user.save
-    redirect '/welcome'
+    session[:user_id] = user.id
+     redirect '/'
   else
-    redirect '/failure'
+    erb :signup
   end
 end
 
@@ -21,17 +21,18 @@ end
   end
 
   post "/login" do
-    user = User.find_by_email(params[:email])
-    if user && user.authenticate(password_digest: params[:password])
-      session[:user_id] = user.id
-      redirect '/welcome'
+    user = User.find_by_username(params[:username])
+    if user && user.authenticate(params[:password])
+    if user.save
+      session[:id] = user.id
+      redirect '/'
     else
       @error = "Incorrect email or password"
       erb :login
       end
    end
 
-  get "/welcome" do
+  get "/login" do
       if logged_in?
           erb :welcome
       else
@@ -56,6 +57,7 @@ end
 
     def current_user
       User.find(session[:user_id])
+      end
     end
   end
 end

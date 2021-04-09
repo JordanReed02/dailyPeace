@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
-
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
-  has_many :sage
+  has_many :sages, foreign_key: "users_id"
 end
