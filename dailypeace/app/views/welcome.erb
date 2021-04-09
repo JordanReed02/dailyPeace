@@ -5,11 +5,20 @@
 
     <div class="content">
 
+      <% if logged_in? %>
+#you have completed the login/signup functionality
+
+      <% else %>
+
       <li><a href="/signup">Sign Up</a></li>
       <li><a href="/login">Log In</a></li>
        <a class="active" href="/">Home</a>
 
       <p> </p>
+
+
+
+      <% end %>
     </div>
 
 
