@@ -8,10 +8,25 @@
   </head>
   <body>
 
+    <?php
 
+    ?>
 
+  <script type="text/javascript">
 
-    
+    app.get('/', (request, response) => {
+      database.find{}, (err, data) => {
+        response.json(data);
+      });
+    });
+
+      async function getData() {
+          const response = await fetch('/');
+          const data = await response.json();
+          console.log(data)
+      }
+  </script>
+
     <img src="" id="rainbow" />
 
     <script type="text/javascript">

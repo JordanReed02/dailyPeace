@@ -10,12 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_164754) do
+ActiveRecord::Schema.define(version: 2021_04_10_035719) do
+
+  create_table "orderedsage", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "sages_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "users_id"
+  end
 
   create_table "sages", force: :cascade do |t|
     t.string "thought"
     t.string "explenation"
-    t.integer "users_id"
   end
 
   create_table "users", force: :cascade do |t|
