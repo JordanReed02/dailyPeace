@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 # index
   get "/orders" do
-    @articles = Article.all
+    @orders = Order.all
     erb :index
   end
 
@@ -13,13 +13,13 @@ class OrdersController < ApplicationController
 
   # create
   post "/orders" do
-    @article = Article.create(params)
+    @order = Order.create(params[:title])
     redirect to "/orders/#{ @order.id }"
   end
 
   # show
   get "/orders/:id" do
-    @article = Order.find(params[:id])
+    @order = Order.find(params[:id])
     erb :show
   end
 

@@ -3,11 +3,7 @@ class SagesController < ApplicationController
 attr_accessor :thought, :explenation
 attr_reader :id
 
-  def initialize(thought, explenation, id=nil)
-    @thought = thought
-  @explenation = explenation
-    @id = id
-end
+
 
   def save
    if self.id
@@ -47,9 +43,10 @@ end
       sage_data = sage[0]
       sage = Sage.new(sage_data[0], sage_data[1], sage_data[2])
     else
-    sage
-  end
+        sage
 
+    end
+  end
 end
 
 
@@ -57,5 +54,4 @@ end
 get "/index" do
 
   erb :index
-end
 end

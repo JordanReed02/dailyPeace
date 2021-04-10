@@ -7,3 +7,4 @@ end
 run ApplicationController
 use UserController
 use SagesController
+use OrdersController
