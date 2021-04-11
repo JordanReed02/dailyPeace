@@ -5,8 +5,10 @@
 <html>
   <body>
 
-    <audio controls>
-          <source src="Menu 2 (Prod. JR) .ogg" type="audio/ogg">
+
+    <audio src=file.mp3 controls>
+
+          <source src="Menu2ProdbyJR.ogg" type="audio/ogg">
       </audio>
 
   </body>
@@ -19,9 +21,9 @@
 <li><a href="/orders">All Requests</a></li>
 <li> <a class="active" href="/">Home</a> </li>
 
-<form method="delete" action="/orders/delete" <%= @order.id %>">
-      <input type="hidden" name="method" value="delete" />
-      <input type="submit" value="delete" />
+<form method="delete" action="/orders/:id" <%= @order.id %>">
+      <input type="hidden" name="method" value="destroy" />
+      <input type="submit" value="destroy" />
     </form>
 <h1>The Sage's thoughts have spun.. </h1>
 
