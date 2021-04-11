@@ -2,13 +2,6 @@ class UserController < ApplicationController
 
 
 
-  
-    get "/logout" do
-      session.clear
-      redirect "/"
-      end
-
-
     get "/error" do
       erb :error
     end
@@ -37,11 +30,16 @@ post "/signup" do
 end
 
 
+  get "logout" do
+    session.clear
+    redirect "/"
+    end
+
   get "/login" do
     erb :login
   end
 
-  get "/login" do
+  get "/error" do
         if logged_in?
             erb :welcome
         else

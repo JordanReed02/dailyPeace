@@ -1,7 +1,8 @@
 <h3>Please Login</h3>
+<%= @error %>
   <form action="/login" method="POST">
         <input type="username" name="username" placeholder="Username:">
-        <input type="password" name="password" placeholder="Password:">
+        <input type="password_digest" name="password" placeholder="Password:">
         <input type="submit" value="Log In">
         <a class="active" href="/">Home</a>
   </form>

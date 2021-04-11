@@ -1,8 +1,21 @@
-<form action="/orders" method="post">
-  <ul>
-    <li>
 
-      <label for="title">Request</label>
-      <input id="title" type="text" name="order_title" />
-    </li>
+  <% if @order.errors.any? %>
+    <div id="error_explenation">
+      <h2><%= @order.errors.count %> error(s) prohibited this order from being placed </h2>
+
+  <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+
+    </ul>
+  </div>
+  <% end %>
+
+   <form action="/orders" method="post">
+     <div><label for="title">Request</label></div>
+     <input id="title" type="text" name="order[title]" value="<%= @order.title %>" />
+  <input type="submit" value="Create Order"
     <a class="active" href="/">Home</a>
+
+  </form>
