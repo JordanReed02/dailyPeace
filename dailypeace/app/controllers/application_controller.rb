@@ -8,10 +8,21 @@ class ApplicationController < Sinatra::Base
           enable :sessions
           set :session_secret, "secret"
         end
+        helpers do
+               def logged_in?
+                   !!session[:user_id]
+               end
 
-  get "/" do
-      erb :welcome
-    end
+               def current_user
+                  @current_user = User.find_by(session[:users_id])
+               end
 
-
-end
+               def authorized_to_edit?(post)
+                   @post.user == @current_user
+               end
+               get "logout" do
+                 session.clear
+                 redirect "/"
+                 end
+               end
+           end

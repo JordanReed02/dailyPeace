@@ -1,5 +1,26 @@
 class UserController < ApplicationController
 
+
+
+  
+    get "/logout" do
+      session.clear
+      redirect "/"
+      end
+
+
+    get "/error" do
+      erb :error
+    end
+
+    get "/" do
+        erb :welcome
+      end
+
+    get "/welcome" do
+      erb :welcome
+    end
+
   get "/signup" do
     erb :signup
 
@@ -20,44 +41,27 @@ end
     erb :login
   end
 
+  get "/login" do
+        if logged_in?
+            erb :welcome
+        else
+        redirect "/error"
+        end
+      end
+
   post "/login" do
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
     if user.save
-      session[:id] = user.id
-      redirect '/'
+      session[:user_id] = user.id
+      redirect '/welcome'
     else
-      @error = "Incorrect email or password"
-      erb :login
+
+      redirect '/error'
       end
    end
 
-  get "/login" do
-      if logged_in?
-          erb :welcome
-      else
-      redirect "/login"
-      end
-    end
 
-  get "/failure" do
-    erb :failure
-    end
-
-  get "logout" do
-    session.clear
-    redirect "/"
-  end
-
-  #assigns current session to user
-  helpers do
-    def logged_in?
-      !!session[:user_id]
-    end
-
-    def current_user
-      User.find(session[:user_id])
-      end
-    end
   end
 end
+  #assigns current session to user
