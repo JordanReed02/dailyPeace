@@ -20,14 +20,14 @@ end
 
 # show
 get "/orders/:id" do
-  @order = Order.find(params[:Order_id])
+  @order = Order.find(params[:id])
   @sage = Sage.find(params[:id])
   erb :show
-end
-
+  end
+  
 # edit
 get "/orders/:id/edit" do
-  @order = Order.find(params[:Order_id])
+  @order = Order.find(params[:id])
   erb :edit
 end
 
@@ -46,7 +46,7 @@ delete "/orders/delete" do
   connection.execute("DELETE FROM orders WHERE orders.id = ?", params['id'])
   if @order.nil?
     flash[:error] = "Could not change Request"
-    @order.destroy
+    Order.delete
   redirect "/orders"
       end
     end

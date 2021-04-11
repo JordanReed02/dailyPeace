@@ -1,6 +1,17 @@
-<<div class="header">
+<div class="header">
   <h2></h2>
 </div>
+
+<html>
+  <body>
+
+    <audio controls>
+          <source src="Menu 2 (Prod. JR) .ogg" type="audio/ogg">
+      </audio>
+
+  </body>
+</html>
+
 
 <li><a href="/orders/new">Make Request</a></li>
 
@@ -8,7 +19,7 @@
 <li><a href="/orders">All Requests</a></li>
 <li> <a class="active" href="/">Home</a> </li>
 
-<form method="order" action="/orders/delete" <%= @order.id %>" style="display: inline-block;">
+<form method="delete" action="/orders/delete" <%= @order.id %>">
       <input type="hidden" name="method" value="delete" />
       <input type="submit" value="delete" />
     </form>
@@ -16,7 +27,7 @@
 
 <div>
 <h1><%= @sage.thought %></h1>
-<h2><%= @sage.explenation %></h1>
+<h2><%= @sage.explenation %></h2>
 </div>
 
 
