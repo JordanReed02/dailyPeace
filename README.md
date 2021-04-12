@@ -1,6 +1,7 @@
 # dailyPeace
 
-This app shares some of my favorite sayings 
+This app shares some of my favorite sayings in a cool way from "The Sage's Tree" 
+with some background atomosphere if you decide to play the tracks.
 
 To use: 
 1. clone this repository
