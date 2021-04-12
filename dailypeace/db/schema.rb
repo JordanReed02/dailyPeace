@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_11_010757) do
+ActiveRecord::Schema.define(version: 2021_04_12_084353) do
 
   create_table "orderedsages", force: :cascade do |t|
     t.integer "quantity"
+    t.integer "sages_id"
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "users_id"
+    t.string "request"
     t.string "title"
     t.integer "user_id"
   end
