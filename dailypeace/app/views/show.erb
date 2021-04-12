@@ -2,29 +2,15 @@
   <h2></h2>
 </div>
 
-<html>
-  <body>
-
-
-    <audio src=file.mp3 controls>
-
-          <source src="Menu2ProdbyJR.ogg" type="audio/ogg">
-      </audio>
-
-  </body>
-</html>
-
 
 <li><a href="/orders/new">Make Request</a></li>
 
-<li><a href="/orders/:id/edit">Edit Requests</a></li>
+
 <li><a href="/orders">All Requests</a></li>
 <li> <a class="active" href="/">Home</a> </li>
 
-<form method="delete" action="/orders/:id" <%= @order.id %>">
-      <input type="hidden" name="method" value="destroy" />
-      <input type="submit" value="destroy" />
     </form>
+    <h2><%= @order.title %></h2>
 <h1>The Sage's thoughts have spun.. </h1>
 
 <div>

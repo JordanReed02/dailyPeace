@@ -7,7 +7,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
+<% if logged_in? %>
 
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-91e6480d-77cd-4fe9-978b-07ff8ad7371f"></div>
+<% end %>
+
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-G9DpmGxRIF6tpgbrkZVcZDeIomEU22LgTguPAI739bbKytjPE/kHTK5YxjJAAEXC" crossorigin="anonymous">
     <title>DailyPeace</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,12 +23,12 @@
   <body>
     <div class="wrapper">
 
-      
+
 
 
         <%= yield %>
 
-#anything above this line will be interpreted within the normal bounds from other files as long as it is encompassed by the div tags
+
       <footer class="branding">
         <small>&copy; 2021 <strong>DailyPeace</strong></small>
       </footer>

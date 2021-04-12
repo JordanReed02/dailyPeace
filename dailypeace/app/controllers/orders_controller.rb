@@ -22,7 +22,7 @@ end
 
 # show
 get "/orders/:id" do
-  @order = Order.find(id: params[:title])
+  @order = Order.find(params[:id])
   @sage = Sage.find(params[:id])
   erb :show
   end
